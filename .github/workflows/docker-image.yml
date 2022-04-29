@@ -20,13 +20,13 @@ jobs:
       uses: docker/login-action@v1.14.1
       with:
     # Server address of Docker registry. If not set then will default to Docker Hub
-       registry: sabiha.jfrog.io
+       registry: action123.jfrog.io
     # Username used to log against the Docker registry
-       username: sabkhan306@gmail.com
+       username: chnagendra50@gmail.com
     # Password or personal access token used to log against the Docker registry
-       password: Divyam@77
+       password: WaterSun@123
 
     - name: Build the Docker image
       run: |
-        docker build . --file Dockerfile --tag sabiha.jfrog.io/type/image:20
-        docker push sabiha.jfrog.io/type/image:20
+        docker build . --file Dockerfile --tag action123.jfrog.io/typescript/image:latest
+        docker push action123.jfrog.io/typescript/image:latest
