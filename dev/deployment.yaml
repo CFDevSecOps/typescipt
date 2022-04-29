@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: typescript
-        image: appimages
+        image: action123.jfrog.io/typescript/image:latest
         imagePullPolicy: "Always"
         ports:
         - containerPort: 3000
