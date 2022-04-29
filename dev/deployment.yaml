@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: typescript
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: typescript
+  template:
+    metadata:
+      labels:
+        app: typescript
+        tier: frontend
+    spec:
+      containers:
+      - name: typescript
+        image: appimages
+        imagePullPolicy: "Always"
+        ports:
+        - containerPort: 3000
+      imagePullSecrets:
+        - name: argocd
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: typescript
+spec:
+  type: LoadBalancer
+  selector:
+    app: typescript
+    tier: frontend
+  ports:
+  - port: 3000
+    targetPort: 3000
